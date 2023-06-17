@@ -1,0 +1,10 @@
+services:
+  carbote-bot:
+    build: .
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - ./app:/app
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+      AIRTABLE_TOKEN: ${AIRTABLE_TOKEN}

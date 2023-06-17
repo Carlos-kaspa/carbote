@@ -1,6 +1,7 @@
 import discord
 from infraestructure.carbote.config import carbote
 from infraestructure.datasource.airtable.client import airtable
+from discord.ui import View, Button
 
 embed_color=0xd10a07
 
@@ -11,7 +12,7 @@ async def tchola_list(ctx):
 @carbote.instance.command(name='tchola')
 async def tchola_list(ctx):
     #creates view as a section
-    view = carbote.View()
+    view = View()
     emoji = ['0️⃣', '1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟']
     embed_title=discord.Embed(title=f'{ctx.channel.mention}, de 0 a 10... quanto você é tchôla?',  color=embed_color)
 
@@ -21,7 +22,7 @@ async def tchola_list(ctx):
 
     #creates buttons
     for index in range(0,11):
-        button = carbote.Button(label =f'{index}', style=discord.ButtonStyle.gray, custom_id=f'{index}')
+        button = Button(label =f'{index}', style=discord.ButtonStyle.gray, custom_id=f'{index}')
         async def button_callback(interaction):
             print(interaction.data['custom_id'])
             print(interaction.user)

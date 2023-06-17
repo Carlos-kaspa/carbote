@@ -2,7 +2,7 @@ import random
 import discord
 from infraestructure.carbote.config import carbote
 from infraestructure.datasource.airtable.client import airtable
-
+from discord.ui import View, Button
 
 embed_color=0xd10a07
 
@@ -41,12 +41,12 @@ async def marry_kiss_kill(ctx):
         embed_option=discord.Embed(description=f'{name}',  color=0xd10a07)
         
         #creates view as a section
-        view = carbote.View()
+        view = View()
 
         #creates buttons
-        marry_button = carbote.Button(label = "Casa", emoji='👰' ,style=discord.ButtonStyle.green)
-        kiss_button = carbote.Button(label = "Beija", emoji='💋', style=discord.ButtonStyle.gray)
-        kill_button= carbote.Button(label = "Mata", emoji='💀', style=discord.ButtonStyle.red)
+        marry_button = Button(label = "Casa", emoji='👰' ,style=discord.ButtonStyle.green)
+        kiss_button = Button(label = "Beija", emoji='💋', style=discord.ButtonStyle.gray)
+        kill_button= Button(label = "Mata", emoji='💀', style=discord.ButtonStyle.red)
 
         #add react buttons
         view.add_item(marry_button)

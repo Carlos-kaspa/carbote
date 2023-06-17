@@ -11,6 +11,6 @@ class Carbote():
         self.instance = commands.Bot(command_prefix='!', intents=intents)
 
     def start(self):
-        self.instance.run(os.environ.get('BOT_TOKEN'))
+        self.instance.run(os.environ.get('_BOT_TOKEN_'))
 
 carbote = Carbote()

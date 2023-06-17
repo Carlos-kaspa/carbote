@@ -1,0 +1,26 @@
+steps:
+ - name: 'gcr.io/cloud-builders/docker'
+   args: 
+    - 'build'
+    - '-t'
+    - 'gcr.io/$PROJECT_ID/carbote-$BRANCH_NAME'
+    - '--build-arg'
+    - '_BOT_TOKEN_=$_BOT_TOKEN_'
+    - '--build-arg'
+    - '_AIRTABLE_TOKEN_=$_AIRTABLE_TOKEN_'
+    - '--build-arg'
+    - '_PORT_=$_PORT_'
+    - '.'
+ - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+   entrypoint: gcloud
+   args:
+    - 'run'
+    - 'deploy'
+    - '--image'
+    - 'gcr.io/$PROJECT_ID/carbote-$BRANCH_NAME:$COMMIT_SHA'
+    - '--region'
+    - 'us-east-1'
+    - '--platform'
+    - 'managed'
+images:
+ - 'gcr.io/$PROJECT_ID/carbote-$BRANCH_NAME:$COMMIT_SHA'

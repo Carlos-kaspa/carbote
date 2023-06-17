@@ -6,5 +6,5 @@ services:
     volumes:
       - ./app:/app
     environment:
-      BOT_TOKEN: ${BOT_TOKEN}
-      AIRTABLE_TOKEN: ${AIRTABLE_TOKEN}
+      _BOT_TOKEN_: ${_BOT_TOKEN_}
+      _AIRTABLE_TOKEN_: ${_AIRTABLE_TOKEN_}

@@ -16,6 +16,7 @@ steps:
    args:
     - 'run'
     - 'deploy'
+    - carbote-production
     - '--image'
     - 'gcr.io/$PROJECT_ID/carbote-$BRANCH_NAME:$COMMIT_SHA'
     - '--region'

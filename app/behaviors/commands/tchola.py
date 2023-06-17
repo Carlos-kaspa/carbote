@@ -18,7 +18,7 @@ async def tchola_list(ctx):
 
     # get tchola_rank from airtable
     # https://airtable.com/app2No4LTWrc7lY7l/tblYdJESulHZ1s0IK/viwuyQzz3dNGBLnmU?blocks=hide
-    tchola_table = airtable.get_table('app2No4LTWrc7lY7l', 'tblYdJESulHZ1s0IK')
+    tchola_table = airtable.api.get_table('app2No4LTWrc7lY7l', 'tblYdJESulHZ1s0IK')
 
     #creates buttons
     for index in range(0,11):

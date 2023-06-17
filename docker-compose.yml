@@ -2,7 +2,7 @@ services:
   carbote-bot:
     build: .
     ports:
-      - "${PORT}:${PORT}"
+      - "${_PORT_}:${_PORT_}"
     volumes:
       - ./app:/app
     environment:

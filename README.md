@@ -32,3 +32,4 @@ docker-compose down
 - adicionar logging
 - adicionar linter
 - adicionar pre-commit hooks para linter
+- integrar a atualizacao da imagem na vm direto pela pipeline
